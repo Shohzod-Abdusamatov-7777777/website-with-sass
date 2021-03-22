@@ -1,0 +1,123 @@
+@import "./navbar";
+@import "./colors";
+@import "./colors";
+@import "./media-queries";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+// hero section
+.hero {
+  width: 100%;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+  background-color: $light;
+  height: calc(100vh - 60px);
+
+  &__container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      flex-direction: column;
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    @include mobile {
+      flex-direction: column;
+      font-size: 1.5rem;
+      align-items: center;
+    }
+    &--left {
+      padding: 1rem;
+      h1 {
+        // color: rgb(68, 186, 49);
+        font-size: 3rem;
+        background: linear-gradient(
+          to right,
+          rgb(68, 186, 49),
+          #34a01f,
+          #185e0c,
+          #54d142
+        );
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+      h2 {
+        margin: 1rem 0;
+        font-weight: 500;
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &--btn {
+      margin: 1rem 0 0;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3), 0px 10px 21px rgba(0, 0, 0, 0.2);
+      position: relative;
+      background: $lime;
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: $orangeRed;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+      a {
+        position: relative;
+        text-decoration: none;
+        font-weight: 600;
+        height: 100%;
+        width: 100%;
+        color: $light;
+        z-index: 2;
+        padding: 0.7rem 1rem;
+      }
+    }
+
+    &--right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+    }
+    &--img {
+      display: block;
+      height: auto;
+      width: 100%;
+      max-height: calc(100vh - 60px);
+      padding-right: 1rem;
+      @include tablet {
+       
+        height: auto;
+      }
+      @include mobile {
+       
+        height: auto;
+      }
+    }
+  }
+}

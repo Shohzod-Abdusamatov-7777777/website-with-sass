@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>sass website</title>
+  </head>
+  <body>
+    <!-- NAVBAR SECTION -->
+    <nav class="navbar">
+      <a href="/" class="navbar__logo">SASS</a>
+      <div class="navbar__bars" onclick="toggle()">
+        <a href="javscript:void(0);">=</a>
+      </div>
+      <div class="navbar__menu" id="menu">
+        <a href="/" class="navbar__menu--links">Home</a>
+        <a href="/" class="navbar__menu--links">Products</a>
+        <a href="/" class="navbar__menu--links">Services</a>
+        <a href="/" id="button" type="button" class="navbar__menu--links"
+          >Sign Up</a
+        >
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <div class="hero__container">
+        <div class="hero__container--left">
+          <h1>They are coming</h1>
+          <h2>be Prepead</h2>
+          <p>sign up now to join the list</p>
+          <button class="hero__container--btn">
+            <a href="#">Sign Up</a>
+          </button>
+        </div>
+        <div class="hero__container--right">
+          <img
+            src="/images/heroImg.png"
+            alt="no img"
+            class="hero__container--img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var i = 1;
+      function toggle() {
+        var element = document.getElementById("menu");
+        if (i % 2 == 0) {
+          element.style.transform = "translateX(-100%)";
+          i++;
+        } else {
+          element.style.transform = "translateX(0)";
+          i--;
+        }
+      }
+    </script>
+  </body>
+</html>

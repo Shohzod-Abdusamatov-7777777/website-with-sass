@@ -1,0 +1,98 @@
+@import "./colors";
+@import "./media-queries";
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+// NAVBAR
+.navbar {
+  @extend %align-center;
+  justify-content: space-between;
+  height: 60px;
+  background: $light;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1), 0px 10px 21px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    color: $dark;
+
+    font-size: 2rem;
+    margin-left: 1rem;
+    font-variant: small-caps;
+
+    font-weight: 600;
+    @include tablet {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &__bars {
+    opacity: 0;
+    display: none;
+    @include tablet {
+      opacity: 1;
+      display: block;
+      color: $dark;
+      font-size: 2rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+  &__menu {
+    @extend %align-center;
+    justify-content: space-between;
+    @include tablet {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      height: calc(100vh - 60px);
+      width: 280px;
+      position: fixed;
+      top: 60px;
+      bottom: 0;
+      left: 0;
+      justify-content: space-evenly;
+      z-index: 2;
+      transition: all 0.5s;
+      transform: translateX(-100%);
+    }
+
+    &--links {
+      padding: 0.5rem 0.75rem;
+      margin-right: 1rem;
+      color: $dark;
+      font-weight: 700;
+      @include tablet {
+        color: $light;
+      }
+
+      &:hover {
+        color: $lime;
+        transition: all 0.3s ease;
+      }
+    }
+
+    #button {
+      padding: 12px 24px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      background-color: $lime;
+      color: $light;
+      margin-left: 16px;
+
+      &:hover {
+        background-color: $orangeRed;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
